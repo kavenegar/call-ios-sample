@@ -10,7 +10,7 @@ import UIKit
 import KavenegarCall
 
 
-var avanegar : KavenegarCall {
+var kavenegarCall : KavenegarCall {
     return KavenegarCall.instance
 }
 

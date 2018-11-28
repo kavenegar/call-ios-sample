@@ -48,7 +48,7 @@ class MainViewController: UIViewController {
     }
     
     var logger: Logger {
-        return avanegar.logger
+        return kavenegarCall.logger
     }
     
     override func viewDidLoad() {

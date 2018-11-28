@@ -113,7 +113,7 @@ extension CallViewController: CXProviderDelegate {
     /// mute call
     func muteCall(){
         
-        let setMutedCallAction = CXSetMutedCallAction(call: UUID(uuidString: self.call.id)!, muted: avanegar.peerConnection.isMuted)
+        let setMutedCallAction = CXSetMutedCallAction(call: UUID(uuidString: self.call.id)!, muted: kavenegarCall.peerConnection.isMuted)
         let transaction = CXTransaction(action: setMutedCallAction)
         
         cxCallController.request(transaction) { error in
@@ -129,11 +129,11 @@ extension CallViewController: CXProviderDelegate {
     
     func mute(){
         
-        if avanegar.peerConnection.isMuted {
-            avanegar.peerConnection.isMuted = false
+        if kavenegarCall.peerConnection.isMuted {
+            kavenegarCall.peerConnection.isMuted = false
             self.muteView.backgroundColor = UIColor.clear
         }else{
-            avanegar.peerConnection.isMuted = true
+            kavenegarCall.peerConnection.isMuted = true
             self.muteView.backgroundColor = #colorLiteral(red: 0.5005699992, green: 0.5487136841, blue: 0.5537394285, alpha: 1)
         }
         

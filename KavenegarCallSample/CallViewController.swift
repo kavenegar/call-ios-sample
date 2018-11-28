@@ -1,9 +1,7 @@
 import UIKit
 import KavenegarCall
 import CallKit
-import PushKit
-import Alamofire
-import WebRTC
+
 
 class CallViewController: UIViewController {
     
@@ -32,7 +30,7 @@ class CallViewController: UIViewController {
     var cxCallUpdate: CXCallUpdate!
     
     var logger: Logger {
-        return avanegar.logger
+        return kavenegarCall.logger
     }
     
     var appApiToken: String {
