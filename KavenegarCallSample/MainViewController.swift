@@ -16,31 +16,19 @@ enum ViewStatus: String {
     case calling = "calling"
 }
 
-
-
 class MainViewController: UIViewController {
 
-      var voipRegistry: PKPushRegistry!
-    
+    var voipRegistry: PKPushRegistry!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-
     @IBOutlet weak var contentContainerView: UIView!
-   
-    
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var mobileNumberTextField: UITextField!
     @IBOutlet weak var loginButtonOutlet: UIButton!
-    
     @IBOutlet weak var callView: UIView!
     @IBOutlet weak var callUserNameTextField: UITextField!
     @IBOutlet weak var callButtonOutlet: UIButton!
   
-  
-    
-    
-    
     var appApiToken: String? {
         get {
             return UserDefaults.standard.value(forKey: "AppApiToken") as? String
@@ -65,15 +53,9 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         config()
         registerForVoIPPushes()
-        
-        
     }
-    
-   
-    
 }
 
 
@@ -82,7 +64,7 @@ extension MainViewController {
     
     func config(){
       
-          contentContainerView.frame.size.height = self.view.frame.height - self.callView.frame.height
+        contentContainerView.frame.size.height = self.view.frame.height - self.callView.frame.height
         loginButtonOutlet.addTarget(self, action: #selector(self.loginButtonAction), for: .touchDown)
         callButtonOutlet.addTarget(self, action: #selector(self.callButtonAction), for: .touchDown)
         viewsStatus(info: .notConnected)
@@ -173,18 +155,14 @@ extension MainViewController {
         self.activityIndicator.startAnimating()
         call(mobileNumber: callUserNameTextField.text!) { (status, result) in
             DispatchQueue.main.async {
-            self.activityIndicator.stopAnimating()
-            
-            if status != "success" {
-                self.logger.info(status)
-                self.warningAlert(title: "Call", error: status)
-                return
+                self.activityIndicator.stopAnimating()
+                if status != "success" {
+                    self.logger.info(status)
+                    self.warningAlert(title: "Call", error: status)
+                    return
+                }
+                self.startCall(payload: (result?.rawString())!, direction: .outbound)
             }
-            
-            self.startCall(payload: (result?.rawString())!, direction: .outbound)
-            
-            }
-            
         }
         
     }
@@ -206,11 +184,9 @@ extension MainViewController {
 extension MainViewController: PKPushRegistryDelegate {
     
     func registerForVoIPPushes() {
-        
         self.voipRegistry = PKPushRegistry(queue: nil)
         self.voipRegistry.delegate = self
         self.voipRegistry.desiredPushTypes = [.voIP]
-        
     }
     
     func pushRegistry(_ registry: PKPushRegistry, didInvalidatePushTokenFor type: PKPushType) {
@@ -248,13 +224,10 @@ extension MainViewController: PKPushRegistryDelegate {
     
     
     func startCall(payload: String, direction: CallDirection){
-        
-
-        
+    
         let json = JSON(parseJSON: payload)
         let accessToken = json["accessToken"].stringValue
         let callId = json["callId"].stringValue
-        
         
         let callViewController = self.storyboard?.instantiateViewController(withIdentifier: "idCallViewController") as! CallViewController
         callViewController.callId = callId
@@ -302,101 +275,31 @@ extension MainViewController {
         task.resume()
     }
     
-//    func login(mobileNumber: String, callback: @escaping (Bool, String)->Void){
-//
-//        var parameters: [String:Any] = [:]
-//        parameters["mobileNumber"] = mobileNumber
-//        parameters["platform"] = "ios"
-//        parameters["deviceId"] = UIDevice.current.identifierForVendor
-//        parameters["notificationToken"] = self.pushNotificationToken
-//        logger.info(parameters.debugDescription)
-//
-//        alamoFireManager.request("\(restApiURL)/authorize", method: .post, parameters: parameters).responseJSON { response in
-//
-//            if response.response?.statusCode == nil{
-//                callback(false, "Not connected")
-//                return
-//            }
-//
-//            if response.response?.statusCode != 200{
-//                callback(false, "Server down")
-//                return
-//            }
-//
-//            let json = JSON(data: response.data!)
-//            self.logger.info(json.debugDescription)
-//            if let apiToken = json["apiToken"].string {
-//                callback(true, apiToken)
-//                return
-//            }
-//
-//            let status = json["status"].stringValue
-//            callback(false, status)
-//
-//        }
-//    }
   
-        func call(mobileNumber: String ,callback: @escaping (String, JSON?)->Void){
-            let url = URL(string: "https://sample.kavenegar.io/calls")!
-            var request = URLRequest(url: url)
-            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-            request.httpMethod = "POST"
-            request.setValue(self.appApiToken!, forHTTPHeaderField: "Authorization")
-            request.httpBody = ("receptor=" + mobileNumber).data(using: .utf8)
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+    func call(mobileNumber: String ,callback: @escaping (String, JSON?)->Void){
+        let url = URL(string: "https://sample.kavenegar.io/calls")!
+        var request = URLRequest(url: url)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        request.setValue(self.appApiToken!, forHTTPHeaderField: "Authorization")
+        request.httpBody = ("receptor=" + mobileNumber).data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 
-    
-                
-                guard let data = data, error == nil else {
-                    callback("connection_error",nil)
-                    return
-                }
-                
-                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-                    callback("request_is_not_success",nil)
-                    return
-                }
-                
-                let json = JSON(data: data)
-                            self.logger.info(json.debugDescription)
-                
-                self.logger.info(json.debugDescription)
-                
-                callback("success", json)
-                
-                
+            guard let data = data, error == nil else {
+                callback("connection_error",nil)
+                return
             }
-            task.resume()
+                
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                callback("request_is_not_success",nil)
+                return
+            }
+                
+            let json = JSON(data: data)
+            self.logger.info(json.debugDescription)
+            callback("success", json)
+        }
+        task.resume()
     }
-//    func call(mobileNumber: String ,callback: @escaping (String, JSON?)->Void){
-        
-//        var headers = [String:String]()
-//        headers["Authorization"] = self.appApiToken
-//        var parameters = [String : Any]()
-//        parameters["receptor"] = mobileNumber
-//
-//        alamoFireManager.request("\(restApiURL)/call", method: .post, parameters: parameters, headers: headers).responseJSON { response in
-//
-//
-//            if response.response?.statusCode != 200{
-//                callback("failed", nil)
-//                return
-//            }
-//
-//
-//            let json = JSON(data: response.data!)
-//            self.logger.info(json.debugDescription)
-//
-//            let status = json["status"].stringValue
-//            if status == "success" {
-//                callback(status, json["payload"])
-//            }else{
-//                callback(status, nil)
-//
-//            }
-//
-//        }
-        
-//    }
-    
+
 }
