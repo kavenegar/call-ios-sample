@@ -7,6 +7,13 @@
 //
 
 import UIKit
+import KavenegarCall
+
+
+var avanegar : KavenegarCall {
+    return KavenegarCall.instance
+}
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        KavenegarCall.initialize(environment: Environment.production)
         return true
     }
 
@@ -44,3 +52,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension String {
+    func convertJsonToDictionary() -> [String: Any]? {
+        if let data = self.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
+}

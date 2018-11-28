@@ -8,20 +8,56 @@
 
 /* Begin PBXBuildFile section */
 		820F9C6521ABEC2A005F1F13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F9C6421ABEC2A005F1F13 /* AppDelegate.swift */; };
-		820F9C6721ABEC2A005F1F13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F9C6621ABEC2A005F1F13 /* ViewController.swift */; };
-		820F9C6A21ABEC2A005F1F13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820F9C6821ABEC2A005F1F13 /* Main.storyboard */; };
-		820F9C6C21ABEC2B005F1F13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 820F9C6B21ABEC2B005F1F13 /* Assets.xcassets */; };
+		820F9C6721ABEC2A005F1F13 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820F9C6621ABEC2A005F1F13 /* MainViewController.swift */; };
 		820F9C6F21ABEC2B005F1F13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820F9C6D21ABEC2B005F1F13 /* LaunchScreen.storyboard */; };
+		825F5BBA21ABFE0400CD2A93 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825F5BB021ABEE2F00CD2A93 /* WebRTC.framework */; };
+		825F5BBB21ABFE0400CD2A93 /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 825F5BB021ABEE2F00CD2A93 /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		825F5BBD21ABFE0800CD2A93 /* KavenegarCall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825F5BAE21ABEE2C00CD2A93 /* KavenegarCall.framework */; };
+		825F5BBE21ABFE0800CD2A93 /* KavenegarCall.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 825F5BAE21ABEE2C00CD2A93 /* KavenegarCall.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		825F5BC021AC001000CD2A93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 825F5BBF21AC001000CD2A93 /* Main.storyboard */; };
+		825F5BE121AC072700CD2A93 /* redphone_busy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 825F5BDC21AC072700CD2A93 /* redphone_busy.mp3 */; };
+		825F5BE221AC072700CD2A93 /* webrtc_completed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 825F5BDD21AC072700CD2A93 /* webrtc_completed.mp3 */; };
+		825F5BE321AC072700CD2A93 /* webrtc_disconnected.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 825F5BDE21AC072700CD2A93 /* webrtc_disconnected.mp3 */; };
+		825F5BE421AC072700CD2A93 /* redphone_sonarping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 825F5BDF21AC072700CD2A93 /* redphone_sonarping.mp3 */; };
+		825F5BE521AC072700CD2A93 /* redphone_outring.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 825F5BE021AC072700CD2A93 /* redphone_outring.mp3 */; };
+		825F5BE721AC073700CD2A93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 825F5BE621AC073700CD2A93 /* Assets.xcassets */; };
+		825F5BEA21AC078F00CD2A93 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825F5BE821AC078F00CD2A93 /* CallViewController.swift */; };
+		825F5BEB21AC078F00CD2A93 /* CallViewController+CallKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825F5BE921AC078F00CD2A93 /* CallViewController+CallKit.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		825F5BBC21ABFE0400CD2A93 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				825F5BBB21ABFE0400CD2A93 /* WebRTC.framework in Embed Frameworks */,
+				825F5BBE21ABFE0800CD2A93 /* KavenegarCall.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		820F9C6121ABEC2A005F1F13 /* KavenegarCallSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KavenegarCallSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		820F9C6421ABEC2A005F1F13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		820F9C6621ABEC2A005F1F13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		820F9C6921ABEC2A005F1F13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		820F9C6B21ABEC2B005F1F13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		820F9C6621ABEC2A005F1F13 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		820F9C6E21ABEC2B005F1F13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		820F9C7021ABEC2B005F1F13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8252FE6021AEC11200B27422 /* KavenegarCallSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KavenegarCallSample.entitlements; sourceTree = "<group>"; };
+		825F5BAE21ABEE2C00CD2A93 /* KavenegarCall.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KavenegarCall.framework; path = Carthage/Build/iOS/KavenegarCall.framework; sourceTree = "<group>"; };
+		825F5BB021ABEE2F00CD2A93 /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebRTC.framework; path = Carthage/Build/iOS/WebRTC.framework; sourceTree = "<group>"; };
+		825F5BBF21AC001000CD2A93 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../../ios-sdk/Sample/Sample/Main.storyboard"; sourceTree = "<group>"; };
+		825F5BDC21AC072700CD2A93 /* redphone_busy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = redphone_busy.mp3; sourceTree = "<group>"; };
+		825F5BDD21AC072700CD2A93 /* webrtc_completed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = webrtc_completed.mp3; sourceTree = "<group>"; };
+		825F5BDE21AC072700CD2A93 /* webrtc_disconnected.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = webrtc_disconnected.mp3; sourceTree = "<group>"; };
+		825F5BDF21AC072700CD2A93 /* redphone_sonarping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = redphone_sonarping.mp3; sourceTree = "<group>"; };
+		825F5BE021AC072700CD2A93 /* redphone_outring.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = redphone_outring.mp3; sourceTree = "<group>"; };
+		825F5BE621AC073700CD2A93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../ios-sdk/Sample/Sample/Resource/Assets.xcassets"; sourceTree = "<group>"; };
+		825F5BE821AC078F00CD2A93 /* CallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
+		825F5BE921AC078F00CD2A93 /* CallViewController+CallKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CallViewController+CallKit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				825F5BBA21ABFE0400CD2A93 /* WebRTC.framework in Frameworks */,
+				825F5BBD21ABFE0800CD2A93 /* KavenegarCall.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +78,7 @@
 			children = (
 				820F9C6321ABEC2A005F1F13 /* KavenegarCallSample */,
 				820F9C6221ABEC2A005F1F13 /* Products */,
+				825F5BAD21ABEE2C00CD2A93 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +93,39 @@
 		820F9C6321ABEC2A005F1F13 /* KavenegarCallSample */ = {
 			isa = PBXGroup;
 			children = (
+				8252FE6021AEC11200B27422 /* KavenegarCallSample.entitlements */,
+				825F5BDB21AC072700CD2A93 /* Audio */,
 				820F9C6421ABEC2A005F1F13 /* AppDelegate.swift */,
-				820F9C6621ABEC2A005F1F13 /* ViewController.swift */,
-				820F9C6821ABEC2A005F1F13 /* Main.storyboard */,
-				820F9C6B21ABEC2B005F1F13 /* Assets.xcassets */,
+				820F9C6621ABEC2A005F1F13 /* MainViewController.swift */,
+				825F5BE821AC078F00CD2A93 /* CallViewController.swift */,
+				825F5BE921AC078F00CD2A93 /* CallViewController+CallKit.swift */,
+				825F5BBF21AC001000CD2A93 /* Main.storyboard */,
+				825F5BE621AC073700CD2A93 /* Assets.xcassets */,
 				820F9C6D21ABEC2B005F1F13 /* LaunchScreen.storyboard */,
 				820F9C7021ABEC2B005F1F13 /* Info.plist */,
 			);
 			path = KavenegarCallSample;
+			sourceTree = "<group>";
+		};
+		825F5BAD21ABEE2C00CD2A93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				825F5BB021ABEE2F00CD2A93 /* WebRTC.framework */,
+				825F5BAE21ABEE2C00CD2A93 /* KavenegarCall.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		825F5BDB21AC072700CD2A93 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				825F5BDC21AC072700CD2A93 /* redphone_busy.mp3 */,
+				825F5BDD21AC072700CD2A93 /* webrtc_completed.mp3 */,
+				825F5BDE21AC072700CD2A93 /* webrtc_disconnected.mp3 */,
+				825F5BDF21AC072700CD2A93 /* redphone_sonarping.mp3 */,
+				825F5BE021AC072700CD2A93 /* redphone_outring.mp3 */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +138,8 @@
 				820F9C5D21ABEC2A005F1F13 /* Sources */,
 				820F9C5E21ABEC2A005F1F13 /* Frameworks */,
 				820F9C5F21ABEC2A005F1F13 /* Resources */,
+				825F5BB221ABEE4900CD2A93 /* ShellScript */,
+				825F5BBC21ABFE0400CD2A93 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,6 +162,14 @@
 				TargetAttributes = {
 					820F9C6021ABEC2A005F1F13 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -123,19 +197,48 @@
 			buildActionMask = 2147483647;
 			files = (
 				820F9C6F21ABEC2B005F1F13 /* LaunchScreen.storyboard in Resources */,
-				820F9C6C21ABEC2B005F1F13 /* Assets.xcassets in Resources */,
-				820F9C6A21ABEC2A005F1F13 /* Main.storyboard in Resources */,
+				825F5BE521AC072700CD2A93 /* redphone_outring.mp3 in Resources */,
+				825F5BE421AC072700CD2A93 /* redphone_sonarping.mp3 in Resources */,
+				825F5BE221AC072700CD2A93 /* webrtc_completed.mp3 in Resources */,
+				825F5BE721AC073700CD2A93 /* Assets.xcassets in Resources */,
+				825F5BE321AC072700CD2A93 /* webrtc_disconnected.mp3 in Resources */,
+				825F5BE121AC072700CD2A93 /* redphone_busy.mp3 in Resources */,
+				825F5BC021AC001000CD2A93 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		825F5BB221ABEE4900CD2A93 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/KavenegarCall.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/WebRTC.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		820F9C5D21ABEC2A005F1F13 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				820F9C6721ABEC2A005F1F13 /* ViewController.swift in Sources */,
+				825F5BEA21AC078F00CD2A93 /* CallViewController.swift in Sources */,
+				820F9C6721ABEC2A005F1F13 /* MainViewController.swift in Sources */,
+				825F5BEB21AC078F00CD2A93 /* CallViewController+CallKit.swift in Sources */,
 				820F9C6521ABEC2A005F1F13 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,14 +246,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		820F9C6821ABEC2A005F1F13 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				820F9C6921ABEC2A005F1F13 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		820F9C6D21ABEC2B005F1F13 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -197,6 +292,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -213,7 +309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -258,6 +354,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -268,9 +365,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -282,15 +380,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X76FAKNC88;
+				CODE_SIGN_ENTITLEMENTS = KavenegarCallSample/KavenegarCallSample.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = A56QU79AZ6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = KavenegarCallSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.avanegar.ios.sample.KavenegarCallSample;
+				PRODUCT_BUNDLE_IDENTIFIER = io.avanegar.ios.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = AvanegarSample_Dev;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -300,15 +404,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X76FAKNC88;
+				CODE_SIGN_ENTITLEMENTS = KavenegarCallSample/KavenegarCallSample.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = A56QU79AZ6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = KavenegarCallSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.avanegar.ios.sample.KavenegarCallSample;
+				PRODUCT_BUNDLE_IDENTIFIER = io.avanegar.ios.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = AvanegarSample_Dev;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
