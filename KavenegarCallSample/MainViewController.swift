@@ -245,7 +245,7 @@ extension MainViewController {
     
     func login(mobileNumber: String, callback: @escaping (Bool, String)->Void){
         
-        let url = URL(string: "https://sample.kavenegar.io/authorize")!
+        let url = URL(string: "\(backendApiPath)/authorize")!
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
@@ -277,7 +277,7 @@ extension MainViewController {
     
   
     func call(mobileNumber: String ,callback: @escaping (String, JSON?)->Void){
-        let url = URL(string: "https://sample.kavenegar.io/calls")!
+        let url = URL(string: "\(backendApiPath)/calls")!
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"

@@ -10,10 +10,11 @@ import UIKit
 import KavenegarCall
 
 
+var backendApiPath = "http://{SAMPLE_BACKEND_URL}:3000"
+
 var kavenegarCall : KavenegarCall {
     return KavenegarCall.instance
 }
-
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
