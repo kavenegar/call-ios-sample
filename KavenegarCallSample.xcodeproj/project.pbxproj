@@ -14,15 +14,15 @@
 		825F5BBB21ABFE0400CD2A93 /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 825F5BB021ABEE2F00CD2A93 /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		825F5BBD21ABFE0800CD2A93 /* KavenegarCall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825F5BAE21ABEE2C00CD2A93 /* KavenegarCall.framework */; };
 		825F5BBE21ABFE0800CD2A93 /* KavenegarCall.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 825F5BAE21ABEE2C00CD2A93 /* KavenegarCall.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		825F5BC021AC001000CD2A93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 825F5BBF21AC001000CD2A93 /* Main.storyboard */; };
 		825F5BE121AC072700CD2A93 /* redphone_busy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 825F5BDC21AC072700CD2A93 /* redphone_busy.mp3 */; };
 		825F5BE221AC072700CD2A93 /* webrtc_completed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 825F5BDD21AC072700CD2A93 /* webrtc_completed.mp3 */; };
 		825F5BE321AC072700CD2A93 /* webrtc_disconnected.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 825F5BDE21AC072700CD2A93 /* webrtc_disconnected.mp3 */; };
 		825F5BE421AC072700CD2A93 /* redphone_sonarping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 825F5BDF21AC072700CD2A93 /* redphone_sonarping.mp3 */; };
 		825F5BE521AC072700CD2A93 /* redphone_outring.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 825F5BE021AC072700CD2A93 /* redphone_outring.mp3 */; };
-		825F5BE721AC073700CD2A93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 825F5BE621AC073700CD2A93 /* Assets.xcassets */; };
 		825F5BEA21AC078F00CD2A93 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825F5BE821AC078F00CD2A93 /* CallViewController.swift */; };
 		825F5BEB21AC078F00CD2A93 /* CallViewController+CallKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825F5BE921AC078F00CD2A93 /* CallViewController+CallKit.swift */; };
+		82FB8FBF21D762DC002C9C0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82FB8FBE21D762DC002C9C0E /* Main.storyboard */; };
+		82FB8FC121D76327002C9C0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82FB8FC021D76327002C9C0E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,15 +49,15 @@
 		8252FE6021AEC11200B27422 /* KavenegarCallSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KavenegarCallSample.entitlements; sourceTree = "<group>"; };
 		825F5BAE21ABEE2C00CD2A93 /* KavenegarCall.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KavenegarCall.framework; path = Carthage/Build/iOS/KavenegarCall.framework; sourceTree = "<group>"; };
 		825F5BB021ABEE2F00CD2A93 /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebRTC.framework; path = Carthage/Build/iOS/WebRTC.framework; sourceTree = "<group>"; };
-		825F5BBF21AC001000CD2A93 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../../ios-sdk/Sample/Sample/Main.storyboard"; sourceTree = "<group>"; };
 		825F5BDC21AC072700CD2A93 /* redphone_busy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = redphone_busy.mp3; sourceTree = "<group>"; };
 		825F5BDD21AC072700CD2A93 /* webrtc_completed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = webrtc_completed.mp3; sourceTree = "<group>"; };
 		825F5BDE21AC072700CD2A93 /* webrtc_disconnected.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = webrtc_disconnected.mp3; sourceTree = "<group>"; };
 		825F5BDF21AC072700CD2A93 /* redphone_sonarping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = redphone_sonarping.mp3; sourceTree = "<group>"; };
 		825F5BE021AC072700CD2A93 /* redphone_outring.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = redphone_outring.mp3; sourceTree = "<group>"; };
-		825F5BE621AC073700CD2A93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../ios-sdk/Sample/Sample/Resource/Assets.xcassets"; sourceTree = "<group>"; };
 		825F5BE821AC078F00CD2A93 /* CallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
 		825F5BE921AC078F00CD2A93 /* CallViewController+CallKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CallViewController+CallKit.swift"; sourceTree = "<group>"; };
+		82FB8FBE21D762DC002C9C0E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		82FB8FC021D76327002C9C0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +99,10 @@
 				820F9C6621ABEC2A005F1F13 /* MainViewController.swift */,
 				825F5BE821AC078F00CD2A93 /* CallViewController.swift */,
 				825F5BE921AC078F00CD2A93 /* CallViewController+CallKit.swift */,
-				825F5BBF21AC001000CD2A93 /* Main.storyboard */,
-				825F5BE621AC073700CD2A93 /* Assets.xcassets */,
+				82FB8FBE21D762DC002C9C0E /* Main.storyboard */,
 				820F9C6D21ABEC2B005F1F13 /* LaunchScreen.storyboard */,
 				820F9C7021ABEC2B005F1F13 /* Info.plist */,
+				82FB8FC021D76327002C9C0E /* Assets.xcassets */,
 			);
 			path = KavenegarCallSample;
 			sourceTree = "<group>";
@@ -200,10 +200,10 @@
 				825F5BE521AC072700CD2A93 /* redphone_outring.mp3 in Resources */,
 				825F5BE421AC072700CD2A93 /* redphone_sonarping.mp3 in Resources */,
 				825F5BE221AC072700CD2A93 /* webrtc_completed.mp3 in Resources */,
-				825F5BE721AC073700CD2A93 /* Assets.xcassets in Resources */,
 				825F5BE321AC072700CD2A93 /* webrtc_disconnected.mp3 in Resources */,
+				82FB8FBF21D762DC002C9C0E /* Main.storyboard in Resources */,
+				82FB8FC121D76327002C9C0E /* Assets.xcassets in Resources */,
 				825F5BE121AC072700CD2A93 /* redphone_busy.mp3 in Resources */,
-				825F5BC021AC001000CD2A93 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
