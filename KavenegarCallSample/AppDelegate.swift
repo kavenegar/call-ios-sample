@@ -10,7 +10,7 @@ import UIKit
 import KavenegarCall
 
 
-var backendApiPath = "http://{SAMPLE_BACKEND_URL}:3000"
+var backendApiPath = "http://YOUR_BACKEND_IP:3000"
 
 var kavenegarCall : KavenegarCall {
     return KavenegarCall.instance

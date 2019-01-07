@@ -209,17 +209,16 @@ extension MainViewController: PKPushRegistryDelegate {
     }
     
     func handlePushNotification(payload: PKPushPayload){
-        logger.info("didReceiveIncomingPushWith 10")
+        logger.info("handlePushNotification")
         
         guard let aps =  payload.dictionaryPayload["aps"] as? [String: Any],
-            let alert = aps["alert"] as? [String: Any],
-            let body = alert["body"] as? String
+            let alert = aps["alert"] as? String
             else {
                 self.warningAlert(title: "Push notification", error: "Parse json")
                 return
         }
         
-        self.startCall(payload: body, direction: .inbound)
+        self.startCall(payload: alert, direction: .inbound)
     }
     
     
@@ -233,10 +232,7 @@ extension MainViewController: PKPushRegistryDelegate {
         callViewController.callId = callId
         callViewController.accessToken = accessToken
         self.present(callViewController, animated: false, completion: nil)
-        
     }
-    
-    
 }
 
 
@@ -249,7 +245,7 @@ extension MainViewController {
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        let postString = "username=\(mobileNumber)&platform=ios&deviceId=\(UIDevice.current.identifierForVendor!)&notificationToken=\(self.pushNotificationToken!)"
+        let postString = "username=\(mobileNumber)&platform=ios&deviceId=\(UIDevice.current.identifierForVendor!)&notificationToken=\(self.pushNotificationToken ?? "")"
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {

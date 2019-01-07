@@ -52,8 +52,7 @@
                                                                         <constraint firstAttribute="height" constant="35" id="ZHB-yN-mM2"/>
                                                                     </constraints>
                                                                     <nil key="textColor"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                    <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
+                                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                                 </textField>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyK-w0-CE4" userLabel="Authorize Button">
                                                                     <rect key="frame" x="0.0" y="50" width="288" height="40"/>
@@ -95,7 +94,7 @@
                                                                     </constraints>
                                                                     <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                    <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
+                                                                    <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="name"/>
                                                                 </textField>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6e-Xl-6Wc" userLabel="Call Button">
                                                                     <rect key="frame" x="0.0" y="50" width="288" height="40"/>
