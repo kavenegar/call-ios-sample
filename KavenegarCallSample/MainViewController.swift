@@ -4,7 +4,6 @@
 //
 //  Created by Mohsen Karimi on 11/26/18.
 //  Copyright © 2018 Mohsen Karimi. All rights reserved.
-//
 
 import UIKit
 import PushKit
@@ -176,7 +175,6 @@ extension MainViewController {
         self.present(alert, animated: true, completion: nil)
         
     }
-    
     
 }
 

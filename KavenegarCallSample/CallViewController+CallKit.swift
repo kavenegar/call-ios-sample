@@ -113,7 +113,7 @@ extension CallViewController: CXProviderDelegate {
     /// mute call
     func muteCall(){
         
-        let setMutedCallAction = CXSetMutedCallAction(call: UUID(uuidString: self.call.id)!, muted: kavenegarCall.peerConnection.isMuted)
+        let setMutedCallAction = CXSetMutedCallAction(call: UUID(uuidString: self.call.id)!, muted: call.media?.isMuted ?? false)
         let transaction = CXTransaction(action: setMutedCallAction)
         
         cxCallController.request(transaction) { error in
@@ -128,15 +128,15 @@ extension CallViewController: CXProviderDelegate {
     
     
     func mute(){
-        
-        if kavenegarCall.peerConnection.isMuted {
-            kavenegarCall.peerConnection.isMuted = false
-            self.muteView.backgroundColor = UIColor.clear
-        }else{
-            kavenegarCall.peerConnection.isMuted = true
-            self.muteView.backgroundColor = #colorLiteral(red: 0.5005699992, green: 0.5487136841, blue: 0.5537394285, alpha: 1)
+        if let media = call.media {
+            if media.isMuted {
+                media.isMuted = false
+                self.muteView.backgroundColor = UIColor.clear
+            } else {
+                media.isMuted = true
+                self.muteView.backgroundColor = #colorLiteral(red: 0.5005699992, green: 0.5487136841, blue: 0.5537394285, alpha: 1)
+            }
         }
-        
     }
     
     
@@ -161,7 +161,7 @@ extension CallViewController: CXProviderDelegate {
         logger.info("CallKit endCallEvent -> \(provider.debugDescription, action.debugDescription)")
         action.fulfill()
         if self.call.status == .finished {
-            logger.info("CallKit \(self.call.id!) is finished already ")
+            logger.info("CallKit \(self.call.id) is finished already ")
             return
         }
         do {

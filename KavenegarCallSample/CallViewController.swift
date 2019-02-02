@@ -79,28 +79,30 @@ extension CallViewController {
             buttonView.isHidden = true
         }
         
-        KavenegarCall.instance.messaging.onStateChanged = { event in
-            self.connectionStatusLabel.text = "Messaging State : \(event.oldState.rawValue) to \(event.newState.rawValue)"
-        }
-        
-        
-        
-        KavenegarCall.instance.messaging.start(accessToken: accessToken, callID: callId, callback: { (result,call) in
-            
-            if result != .success {
+       
+        KavenegarCall.instance.initCall(callId: callId,accessToken: accessToken, listener: self,callback: { (status,call) in
+            if status != .success {
                 self.close()
                 return
             }
-            call?.delegate = self
-            self.call = call
-            
-            switch self.call.direction {
-            case .outbound:
-                self.logger.info("Init outcoming call")
-                self.initOutcomingCall()
-            case .inbound:
-                self.logger.info("Init incoming call")
-                self.initIncomingCall()
+            if let call = call {
+                self.call = call
+                
+                call.onMessagingStateChanged = { event in
+                    self.connectionStatusLabel.text = "Messaging State : \(event.oldState.rawValue) to \(event.newState.rawValue)"
+                }
+                call.onMediaStateChanged = { event in
+                    self.mediaStateLabel.text =  "Media State : \(event.oldState.description) to \(event.newState.description)"
+                }
+                
+                switch self.call.direction {
+                case .outbound:
+                    self.logger.info("Init outcoming call")
+                    self.initOutcomingCall()
+                case .inbound:
+                    self.logger.info("Init incoming call")
+                    self.initIncomingCall()
+                }
             }
         })
         
@@ -165,7 +167,7 @@ extension CallViewController {
     
     func callAlert(){
         
-        if let url = URL(string: "tel:\(self.call.receptor!)") {
+        if let url = URL(string: "tel:\(self.call.receptor)") {
             UIApplication.shared.open(url , options: [:], completionHandler: nil)
         }
         
@@ -174,7 +176,6 @@ extension CallViewController {
     func close() {
         
         self.call?.dispose()
-        KavenegarCall.instance.messaging.close()
         self.audioManeger.stop()
         self.dismiss(animated: true)
         
@@ -240,12 +241,16 @@ extension CallViewController: CallDelegate {
             self.startCommiunication()
             
         case .conversation:
-            KavenegarCall.instance.peerConnection.onStateChanged = peerConnectionStateChanged
+         
             self.audioManeger.stop()
             self.startCommiunication()
             
         case .finished:
             self.logger.info("call is : \(state.rawValue)")
+        case .paused:
+                self.logger.info("call is : \(state.rawValue)")
+        case .flushed:
+                self.logger.info("call is : \(state.rawValue)")
         }
         
     }
