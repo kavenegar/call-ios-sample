@@ -87,7 +87,6 @@ extension CallViewController {
             }
             if let call = call {
                 self.call = call
-                
                 call.onMessagingStateChanged = { event in
                     self.connectionStatusLabel.text = "Messaging State : \(event.oldState.rawValue) to \(event.newState.rawValue)"
                 }
@@ -105,13 +104,6 @@ extension CallViewController {
                 }
             }
         })
-        
-    }
-    
-    func peerConnectionStateChanged(event:PeerConnectionStateChangedEvent){
-        DispatchQueue.main.async {
-            self.mediaStateLabel.text =  "Media State : \(event.oldState.description) to \(event.newState.description)"
-        }
     }
     
     func initOutcomingCall(){
