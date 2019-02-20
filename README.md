@@ -15,7 +15,7 @@
 
  ## مستندات
 برای مشاهده مستندات به صفحه 
-[مستندات کیت توسعه اندروید](https://docs.kavenegar.io/guide/ios/intro.html)
+[مستندات کیت توسعه اندروید](https://docs.kavenegar.io/ios/setup.html)
  مراجعه نمایید.
 
 ## آموزش ها 
@@ -33,7 +33,7 @@
 
 
 برای مطالعه بیشتر به صفحه 
-[معرفی سرویس تماس اینترنتی  کاوه نگار](http://kavenegar.com/service/webcall)
+[معرفی سرویس تماس اینترنتی  کاوه نگار](http://new.kavenegar.com/services/webcall)
  مراجعه نمایید .
 
 اگر در استفاده از کیت های سرویس کاوه نگار مشکلی یا پیشنهادی داشتید ما را با یک Pull Request یا ارسال ایمیل به support@kavenegar.com خوشحال کنید.
